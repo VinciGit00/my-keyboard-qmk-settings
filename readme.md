@@ -11,7 +11,7 @@ Put the repo in the dir:
 For compile the firmware:
 
 ```
-qmk compile -kb planck/rev7 -km marco_vinciguerra
+qmk compile -kb planck/rev7 -km default
 ```
 
 - Make lower and raise and after the reset button
@@ -19,5 +19,5 @@ qmk compile -kb planck/rev7 -km marco_vinciguerra
 ![Screenshot 2023-09-16 alle 11.49.44.png](keyboard%20cdc69bf9b29843958d3f2787d9ffaded/Screenshot_2023-09-16_alle_11.49.44.png)
 
 ```
-qmk flash -kb planck/rev7 -km marco_vinciguerra
+qmk flash -kb planck/rev7 -km default
 ```
