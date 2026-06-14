@@ -21,3 +21,4 @@ qmk compile -kb planck/rev7 -km default
 ```
 qmk flash -kb planck/rev7 -km default
 ```
+
