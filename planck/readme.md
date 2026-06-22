@@ -22,10 +22,10 @@ qmk compile -kb planck/rev7 -km default
 qmk flash -kb planck/rev7 -km default
 ```
 
-## ⌨️ Mappa tasti (keymap `marco_vinciguerra`)
+## ⌨️ Keymap (keymap `marco_vinciguerra`)
 
-Planck rev7 — griglia ortho 4×12. `Lower` e `Raise` sono layer momentanei (tieni premuto); insieme attivano `Adjust`.
-Keycode con layout **Italiano di macOS** (`keymap_italian_mac_ansi.h`).
+Planck rev7 — 4×12 ortho grid. `Lower` and `Raise` are momentary layers (hold them); together they activate `Adjust`.
+Keycodes use the **macOS Italian** layout (`keymap_italian_mac_ansi.h`).
 
 ### Base (Qwerty)
 ```
@@ -34,9 +34,9 @@ Keycode con layout **Italiano di macOS** (`keymap_italian_mac_ansi.h`).
  Sft   Z   X   C   V   B   N   M   ,   .   /  Ent
  Brt Alt Alt Gui  LO  Sft Spc  RA  ←   ↓   ↑   →
 ```
-> Sono disponibili anche i layout alternativi **Colemak** e **Dvorak** (cambiabili dal layer Adjust).
+> Alternative **Colemak** and **Dvorak** layouts are also available (switchable from the Adjust layer).
 
-### Lower  (tieni premuto LO)
+### Lower  (hold LO)
 ```
   `   !   @   #   $   %   ^   &   *   (   )   @
  Del  {   }   [   ]   (   )   _   +   {   }   |
@@ -44,7 +44,7 @@ Keycode con layout **Italiano di macOS** (`keymap_italian_mac_ansi.h`).
   ·   ·   ·   ·   ·   ·   ·   ·  Nxt Vol- Vol+ ▶
 ```
 
-### Raise  (tieni premuto RA)
+### Raise  (hold RA)
 ```
   ~   1   2   3   4   5   6   7   8   9   0  Bksp
  Del F1  F2  F3  F4  F5  F6   -   =   [   ]   \
@@ -59,5 +59,5 @@ Keycode con layout **Italiano di macOS** (`keymap_italian_mac_ansi.h`).
   ·  Vc- Vc+ Mus+ Mus- MIDI+ MIDI- ·   ·    ·    ·    ·
   ·   ·   ·   ·   ·    ·    ·    ·   ·    ·    ·    ·
 ```
-`·` = trasparente. Encoder/dip-switch e Plover layer gestiti via codice nel keymap.
+`·` = transparent. Encoder/dip-switch and the Plover layer are handled in code inside the keymap.
 

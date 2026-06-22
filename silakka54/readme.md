@@ -25,13 +25,13 @@ Enter the bootloader in 2 ways:
 * **Physical boot button**: Hold BOOT button down and connect MCU to the PC
 * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
 
-## ⌨️ Mappa tasti (keymap `default`)
+## ⌨️ Keymap (keymap `default`)
 
-Split 6 colonne + pollici. Tieni premuto uno dei due tasti **layer-switch** (in basso a sinistra / a destra, `MO(_ARROWS)`) per raggiungere il layer simboli/frecce.
+6-column split + thumbs. Hold either **layer-switch** key (bottom-left / bottom-right, `MO(_ARROWS)`) to reach the symbol/arrow layer.
 
-I keycode usano il layout **Italiano di macOS** (`keymap_italian_mac_iso.h`), così i simboli escono corretti senza cambiare input source.
+Keycodes use the **macOS Italian** layout (`keymap_italian_mac_iso.h`), so the symbols come out correctly without changing the input source.
 
-### Layer base
+### Base layer
 ```
  Tab   1   2   3   4   5  │  6   7   8   9   0  Bksp
  Esc   Q   W   E   R   T  │  Y   U   I   O   P   _
@@ -40,21 +40,22 @@ I keycode usano il layout **Italiano di macOS** (`keymap_italian_mac_iso.h`), co
                 Gui Gui Spc │ Spc Ctl Alt
 ```
 
-### Layer simboli/frecce  (tieni premuto LYR)
+### Symbol/arrow layer  (hold LYR)
 ```
   ·    ·   ·   ·   ·   ·  │  ·   ·   ·   ·   ·   ·
   ·    ·   ·   ·   ·   ·  │  ·   ·   ·   ·   ·   ·
   ·    {   }   [   ]   (  │  )   ?   ·   ·   ·   ·
-  ·    #   //  ·   ·   ·  │  ·   ·   <   >   ·   ·
+  ·    #   // Vol- Vol+ · │  ·   ·   <   >   ·   ·
                  ←   ↑   · │  ·   ↓   →
 ```
-`·` = trasparente, passa al layer base.
+`·` = transparent, falls through to the base layer.
 
-| Tasto | Output |   | Tasto | Output |
-|:-----:|:------:|:-:|:-----:|:-------|
-| a | `{` |   | j | `?` |
-| s | `}` |   | z | `#` |
-| d | `[` |   | x | `//` (commento Java) |
-| f | `]` |   | , | `<` |
-| g | `(` |   | . | `>` |
-| h | `)` |   | pollici | ← ↑ ↓ → |
+| Key | Output |   | Key | Output |
+|:---:|:------:|:-:|:---:|:-------|
+| a | `{` |   | z | `#` |
+| s | `}` |   | x | `//` (Java comment) |
+| d | `[` |   | c | Volume down |
+| f | `]` |   | v | Volume up |
+| g | `(` |   | , | `<` |
+| h | `)` |   | . | `>` |
+| j | `?` |   | thumbs | ← ↑ ↓ → |
