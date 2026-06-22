@@ -2,8 +2,12 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "keymap_italian_mac_iso.h"
 
 enum layers { _BASE, _FN, _ARROWS };
+
+// Custom keycode: types the Java line-comment "//"
+enum custom_keycodes { JV_CMNT = SAFE_RANGE };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -22,13 +26,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                             KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS,  KC_TRNS,  KC_TRNS
     ),
-    // Arrow layer: held while either Shift is pressed.
+    // Arrow layer: held while either Shift / layer-switch key is pressed.
     // Thumb keys become arrows: Left / Up (left thumbs), Down / Right (right thumbs).
+    // Home row becomes brackets: a={ s=} d=[ f=] g=( h=)
     [_ARROWS] = LAYOUT(
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,  IT_LCBR, IT_RCBR, IT_LBRC, IT_RBRC, IT_LPRN,                            IT_RPRN, IT_QUES, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,  IT_HASH, JV_CMNT, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, IT_LABK, IT_RABK, KC_TRNS, KC_TRNS,
                                             KC_LEFT, KC_UP,  KC_TRNS,           KC_TRNS, KC_DOWN, KC_RGHT
     )
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case JV_CMNT:
+            if (record->event.pressed) {
+                tap_code16(IT_SLSH);
+                tap_code16(IT_SLSH);
+            }
+            return false;
+    }
+    return true;
+}
