@@ -1,24 +1,33 @@
-# keyboard
+# my-keyboard-qmk-settings
 
-First of all it is required to download the qmk firmware at the following link: [https://qmk.fm](https://qmk.fm/)
+Configurazioni QMK personali, una cartella per tastiera.
 
-Put the repo in the dir: 
+## Tastiere
 
-```
-/Users/marcovinciguerra/qmk_firmware/keyboards/planck/rev7
-```
+| Cartella | Tastiera | MCU | Note |
+|----------|----------|-----|------|
+| [`planck/`](planck/) | Planck rev7 (Drop/OLKB) | STM32 | Ortholinear 4x12, custom matrix, encoder, RGB |
+| [`silakka54/`](silakka54/) | Silakka54 | RP2040 Zero | Split column-staggered 54 tasti, hotswap (maker: [Squalius-cephalus](https://github.com/Squalius-cephalus/silakka54)) |
 
-For compile the firmware:
+## Uso con QMK
 
-```
+Clona il [QMK firmware](https://qmk.fm/) e copia (o symlink) la cartella della tastiera dentro `qmk_firmware/keyboards/`.
+
+### Planck rev7
+
+```bash
 qmk compile -kb planck/rev7 -km default
+qmk flash   -kb planck/rev7 -km default
 ```
 
-- Make lower and raise and after the reset button
+### Silakka54
 
-![Screenshot 2023-09-16 alle 11.49.44.png](keyboard%20cdc69bf9b29843958d3f2787d9ffaded/Screenshot_2023-09-16_alle_11.49.44.png)
-
+```bash
+qmk compile -kb silakka54 -km default
+qmk flash   -kb silakka54 -km default
+# oppure con make:
+make silakka54:default
+make silakka54:default:flash
 ```
-qmk flash -kb planck/rev7 -km default
-```
 
+Per entrare in bootloader sulla Silakka54: tieni premuto il tasto **BOOT** mentre colleghi l'MCU, oppure premi il tasto mappato su `QK_BOOT`.
