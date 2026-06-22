@@ -40,9 +40,10 @@ Keycodes use the **macOS Italian** layout (`keymap_italian_mac_ansi.h`).
 ```
   `   !   @   #   $   %   ^   &   *   (   )   @
  Del  {   }   [   ]   (   )   _   +   {   }   |
-  ·   #   /  F9  F10 F11 F12  ~   |  Home End  ·
+  ·   #   / Vol- Vol+ F11 F12  ~   |  Home End  ·
   ·   ·   ·   ·   ·   ·   ·   ·  Nxt Vol- Vol+ ▶
 ```
+> `c` = Volume down, `v` = Volume up (matching the silakka54 layout).
 
 ### Raise  (hold RA)
 ```
