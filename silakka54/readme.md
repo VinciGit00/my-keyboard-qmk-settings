@@ -44,7 +44,7 @@ Keycodes use the **macOS Italian** layout (`keymap_italian_mac_iso.h`), so the s
 ```
   ·    ·   ·   ·   ·   ·  │  ·   ·   ·   ·   ·   ·
   ·    ·   ·   ·   ·   ·  │  ·   ·   ·   ·   ·   ·
-  ·    {   }   [   ]   (  │  )   ?   ·   ·   ·   ·
+  ·    {   }   [   ]   (  │  )   ?   =   /   ·   ·
   ·    #   // Vol- Vol+ ◀◀ │ ▶▶  ·   <   >   ·   ·
                  ←   ↑   · │  ·   ↓   →
 ```
@@ -52,11 +52,12 @@ Keycodes use the **macOS Italian** layout (`keymap_italian_mac_iso.h`), so the s
 
 | Key | Output |   | Key | Output |
 |:---:|:------:|:-:|:---:|:-------|
-| a | `{` |   | x | `//` (Java comment) |
-| s | `}` |   | c | Volume down |
-| d | `[` |   | v | Volume up |
-| f | `]` |   | b | Previous track |
-| g | `(` |   | n | Next track |
-| h | `)` |   | , | `<` |
-| j | `?` |   | . | `>` |
-| z | `#` |   | thumbs | ← ↑ ↓ → |
+| a | `{` |   | z | `#` |
+| s | `}` |   | x | `//` (Java comment) |
+| d | `[` |   | c | Volume down |
+| f | `]` |   | v | Volume up |
+| g | `(` |   | b | Previous track |
+| h | `)` |   | n | Next track |
+| j | `?` |   | , | `<` |
+| k | `=` |   | . | `>` |
+| l | `/` |   | thumbs | ← ↑ ↓ → |
