@@ -31,11 +31,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Home row becomes brackets: a={ s=} d=[ f=] g=( h=)
     [_ARROWS] = LAYOUT(
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  IT_LCBR, IT_RCBR, IT_LBRC, IT_RBRC, IT_LPRN,                            IT_RPRN, IT_QUES, IT_EQL,  IT_SLSH, KC_TRNS, KC_TRNS,
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, IT_SLSH, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,  IT_LCBR, IT_RCBR, IT_LBRC, IT_RBRC, IT_LPRN,                            IT_RPRN, IT_QUES, IT_EQL,  IT_PLUS, KC_TRNS, KC_TRNS,
         KC_TRNS,  IT_HASH, JV_CMNT, KC_VOLD, KC_VOLU, KC_MPRV,                            KC_MNXT, KC_TRNS, IT_LABK, IT_RABK, KC_TRNS, KC_TRNS,
                                             KC_LEFT, KC_UP,  KC_TRNS,           KC_TRNS, KC_DOWN, KC_RGHT
     )
+};
+
+/* Number-row Shift overrides: on Italian-Mac OS plain Shift+<n> gives the
+ * Italian symbols, but the keycaps show the US ANSI legends. These overrides
+ * make Shift+<n> emit the symbol printed on the keycap instead. */
+const key_override_t ko_excl = ko_make_basic(MOD_MASK_SHIFT, KC_1, IT_EXLM); // !
+const key_override_t ko_at   = ko_make_basic(MOD_MASK_SHIFT, KC_2, IT_AT);   // @
+const key_override_t ko_hash = ko_make_basic(MOD_MASK_SHIFT, KC_3, IT_HASH); // #
+const key_override_t ko_dlr  = ko_make_basic(MOD_MASK_SHIFT, KC_4, IT_DLR);  // $
+const key_override_t ko_perc = ko_make_basic(MOD_MASK_SHIFT, KC_5, IT_PERC); // %
+const key_override_t ko_circ = ko_make_basic(MOD_MASK_SHIFT, KC_6, IT_CIRC); // ^
+const key_override_t ko_ampr = ko_make_basic(MOD_MASK_SHIFT, KC_7, IT_AMPR); // &
+const key_override_t ko_astr = ko_make_basic(MOD_MASK_SHIFT, KC_8, IT_ASTR); // *
+const key_override_t ko_lprn = ko_make_basic(MOD_MASK_SHIFT, KC_9, IT_LPRN); // (
+const key_override_t ko_rprn = ko_make_basic(MOD_MASK_SHIFT, KC_0, IT_RPRN); // )
+
+const key_override_t *key_overrides[] = {
+    &ko_excl, &ko_at,   &ko_hash, &ko_dlr,  &ko_perc,
+    &ko_circ, &ko_ampr, &ko_astr, &ko_lprn, &ko_rprn,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
